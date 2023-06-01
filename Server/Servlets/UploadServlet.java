@@ -1,12 +1,13 @@
-package Servlets;
+package Server.Servlets;
 
-import router.HttpRequest;
-import router.HttpResponse;
 import java.io.*;
 import java.time.Clock;
 
+import Server.Router.HttpRequest;
+import Server.Router.HttpResponse;
+
 public class UploadServlet extends HttpServlet {
-    protected void doPost(HttpRequest request, HttpResponse response) {
+    public void doPost(HttpRequest request, HttpResponse response) {
         try {
             InputStream in = request.getInputStream();
             ByteArrayOutputStream baos = new ByteArrayOutputStream();

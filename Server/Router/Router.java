@@ -1,15 +1,11 @@
-package router;
+package Server.Router;
 
-import java.io.InputStream;
-
-import java.io.OutputStream;
-import java.lang.Object;
 import java.net.Socket;
 
-import javax.swing.tree.ExpandVetoException;
+import Server.Servlets.HttpServlet;
+import Server.Servlets.UploadServlet;
 
 public class Router extends Thread {
-
     private Socket socket;
 
     public Router(Socket socket) {
@@ -22,10 +18,13 @@ public class Router extends Thread {
         try {
             HttpRequest request = new HttpRequest(socket.getInputStream());
             HttpResponse response = new HttpResponse(socket.getOutputStream());
+
+            HttpServlet servlet = new UploadServlet();
+
+            servlet.doPost(request, response);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return;
         }
     }
-
 }

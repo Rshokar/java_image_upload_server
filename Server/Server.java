@@ -1,7 +1,9 @@
-import java.net.*;
-import java.io.*;
+package Server;
 
-import router.Router;
+import java.io.IOException;
+import java.net.ServerSocket;
+
+import Server.Router.Router;
 
 public class Server {
     public static void main(String[] args) throws IOException {
@@ -9,6 +11,7 @@ public class Server {
         try {
             serverSocket = new ServerSocket(8999);
         } catch (IOException e) {
+            System.out.println(e.getMessage());
             System.err.println("Could not listen on port: 8999.");
             System.exit(-1);
         }
@@ -17,5 +20,4 @@ public class Server {
             new Router(serverSocket.accept()).start();
         }
     }
-
 }
