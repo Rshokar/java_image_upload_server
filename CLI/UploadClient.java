@@ -8,7 +8,7 @@ public class UploadClient {
         System.out.println("UploadClient Constructor");
     }
 
-    public String uploadFile(String filePath) {
+    public String uploadFile(String filePath, int port) {
 
         String listing = "";
         try {
@@ -16,7 +16,7 @@ public class UploadClient {
                 throw new Exception("Invalid filename");
             }
 
-            Socket socket = new Socket("localhost", 8999);
+            Socket socket = new Socket("localhost", port);
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
             OutputStream out = socket.getOutputStream();

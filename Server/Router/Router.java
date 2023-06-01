@@ -9,7 +9,6 @@ public class Router extends Thread {
     private Socket socket;
 
     public Router(Socket socket) {
-        System.out.println("Router");
         this.socket = socket;
     }
 

@@ -1,13 +1,15 @@
 package CLI;
 
 import java.io.*;
+import java.security.Policy;
 
 public class Activity {
     private static String filePath;
+    private static int port;
 
     public static void main(String[] args) throws IOException {
         // Default port
-        int port = 8999;
+        port = 8999;
 
         if (args.length < 2) {
             System.out.println("File path and port are required.");
@@ -34,6 +36,6 @@ public class Activity {
     }
 
     public void onCreate() {
-        System.out.println(new CLI.UploadClient().uploadFile(filePath));
+        System.out.println(new CLI.UploadClient().uploadFile(filePath, port));
     }
 }
