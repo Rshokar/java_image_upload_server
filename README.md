@@ -8,7 +8,7 @@
 - [Contact Information](#contact-information)
 
 ## <a id="project-description">Project Description</a>
-This upload server project was developed during my time at BCIT. As part of our third-term specialization, I chose the client-server option, focusing on learning about application communication. The project involves creating a multi-threaded Java server and a Java client that communicate via a socket.
+A challenge that new programmers often face is understanding how different applications communicate. In this project, I showcase a basic application that utilizes sockets for communication. This project was an academic endeavor during my time at BCIT, specifically in my third term in a class focused on application communication.
 
 The server is designed to handle image uploads, providing a simple and efficient way to transfer images over the network. When an image is uploaded, the server saves it to the root directory. Additionally, it provides the functionality to print the local directory to the console, allowing users to quickly check the contents of the server directory.
 
